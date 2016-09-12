@@ -1,0 +1,13 @@
+# Replace plexus-maven-plugin with plexus-component-metadata
+find -name 'pom.xml' -exec sed \
+-i 's/<artifactId>plexus-maven-plugin<\/artifactId>/<artifactId>plexus-component-metadata<\/artifactId>/' '{}' ';'
+
+find -name 'pom.xml' -exec sed \
+-i 's/<goal>descriptor<\/goal>/<goal>generate-metadata<\/goal>/' '{}' ';'
+
+# Removing JARs because of binary code contained
+find -iname '*.jar' -delete
+
+python3 /usr/share/java-utils/pom_editor.py pom_remove_dep :maven-project
+python3 /usr/share/java-utils/pom_editor.py pom_remove_dep :maven-artifact-manager
+python3 /usr/share/java-utils/pom_editor.py pom_add_dep org.apache.maven:maven-compat:3.3.3

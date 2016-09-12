@@ -1,0 +1,20 @@
+# This file contains additional build requirements that did not get
+# picked up automatically. One name per line, no whitespace.
+apache-maven2
+jdk-apache-parent
+jdk-maven-artifact-resolver
+jdk-maven-common-artifact-filters
+jdk-maven-compiler-plugin
+jdk-maven-filtering
+jdk-maven-jar-plugin
+jdk-maven-javadoc-plugin
+jdk-maven-parent
+jdk-maven-remote-resources-plugin
+jdk-maven-resources-plugin
+jdk-maven-shared-components
+jdk-maven-shared-utils
+jdk-plexus-resources
+jdk-plexus-velocity
+jdk-surefire
+jdk-velocity
+jdk-xbean
